@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
+    public AudioSource batSFX;
+    public AudioSource wallSFX;
+    public AudioSource goalSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,21 @@ public class BallScript : MonoBehaviour
 
     public void ResetPosition()
     {
+        goalSFX.Play();
         rb.position = Vector2.zero;
         Launch();
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            batSFX.Play();
+        }
+        
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            wallSFX.Play();
+        }
     }
 }
