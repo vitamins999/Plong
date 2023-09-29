@@ -18,9 +18,12 @@ public class GameLogicScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit(); 
+        }
     }
 
     public void addToScore(int playerNumber)
