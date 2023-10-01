@@ -1821,7 +1821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1972253563}
   ball: {fileID: 848513171}
-  moveSpeed: 2
+  moveSpeed: 7
+  lerpSpeed: 1
 --- !u!1 &2052587353
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,8 +7,9 @@ public class EventScript : MonoBehaviour
 {
     public AudioSource wallSFX;
 
-    public void PlayGame()
+    public void PlayGame(int difficultySelected)
     {
+        Options.difficulty = difficultySelected;
         SceneManager.LoadScene(1);
     }
 

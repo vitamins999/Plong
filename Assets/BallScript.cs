@@ -15,9 +15,9 @@ public class BallScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rb.AddForce(speed * Time.deltaTime * rb.velocity);
     }
 
     public void DestroyBall()
@@ -45,6 +45,7 @@ public class BallScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) 
         {
             batSFX.Play();
+            
         }
         
         if (collision.gameObject.CompareTag("Wall"))
